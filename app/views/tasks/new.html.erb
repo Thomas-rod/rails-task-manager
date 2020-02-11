@@ -1,9 +1,17 @@
+<div class="container">
 <h1>New Tasks</h1>
-<%= form_for(@task) do |f| %>
+<div class="form-group">
+  <%= form_for(@task) do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
+</div>
+<div class="form-group">
   <%= f.label :details %>
   <%= f.text_field :details %>
-  <%= f.submit %>
+</div>
+<div class="form-group">
+  <%= f.submit :class => "btn btn-primary" %>
+</div>
 <% end %>
 <p><%=link_to "Back to all tasks", tasks_path%></p>
+</div>

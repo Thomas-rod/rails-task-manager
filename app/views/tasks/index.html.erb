@@ -5,12 +5,11 @@
     <% @tasks.each do |task| %>
     <lu>
       <p value="<%= task.id %>"><input type="checkbox" <%= task.completed == true ? "checked" : "" %>><%= link_to task.title, task_path(task.id)%>
-      <%= link_to "Delete",
+        <%= link_to "Delete",
             task_path(task),
             method: :delete,
             data: { confirm: "Are you sure?" } %>
-    </p>
-
+      </p>
     </lu>
     <% end %>
   </ul>

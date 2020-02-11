@@ -4,12 +4,14 @@
   <ul>
     <% @tasks.each do |task| %>
     <lu>
-      <p><input type="checkbox" <%= task.completed == true ? "checked" : "" %>><%= link_to task.title, task_path(task.id)%>
-      </p>
+      <p value="<%= task.id %>"><input type="checkbox" <%= task.completed == true ? "checked" : "" %>><%= link_to task.title, task_path(task.id)%>
+      <%=link_to "Delete", task_path(task), method: :delete%>
+    </p>
+
     </lu>
     <% end %>
   </ul>
 
-  <p><%=link_to "Create a new task", tasks_new_path%></p>
+  <p><%=link_to "Add a new task", tasks_new_path%></p>
 </div>
 
